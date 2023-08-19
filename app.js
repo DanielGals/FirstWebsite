@@ -204,3 +204,6 @@ app.use((err, req, res, next) => {
   app.listen(8080, () =>{
     console.log('Server running on port 8080 FIREEEEE');
   })
+
+  // Export the Express API
+  module.exports = app;
