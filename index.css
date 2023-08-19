@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  align-items: center; 
+  
+}
+
+
+body {
+  margin: 0;
+  background: #5CDB95; /* Set the background color for the entire body */
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
+.navbar {
+  width: 100%;
+  height: 108px;
+  margin: auto;
+  padding: 35px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-shrink: 0;
+  border-bottom: 1px solid #05386B;
+  box-sizing: border-box;
+}
+
+.hero {
+  width: 100%;
+  height: 738px;
+  border: 1px solid red; /* to remove the horizontal scroll bar remove this*/
+  position: relative;
+  /* Adjust the transform property to center the hero vertically */
+  top: 40%;
+  transform: translateY(calc(-50% + 54px)); /* Half of navbar height */
+  margin-bottom: 10px;
+
+
+      /*Child*/
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.child {
+  border: 1px solid rgb(233, 0, 0);
+
+  text-align: center;
+
+}
+.head {
+  position: relative;
+  color: #EDF5E1; /* Text color */
+  font-family: 'Alfa Slab One', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 639px;
+  height: 88px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='639' height='88' viewBox='0 0 639 88' fill='none'%3E%3Cpath d='M0 10L639 0L627 88L0 77V10Z' fill='%2305386B'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+.left-image {
+  background: url(/images/heropic.png);
+  width: 50%;
+  height: 600px; /* Adjust the height as needed */
+  background-size: contain; /* Use 'contain' to fit the image within the container */
+  background-position: center center; /* Center the image horizontally and vertically */
+  background-repeat: no-repeat;
+
+}
+.create-account-now {
+
+  margin-top: 100px;
+  width: 200px;
+  height: 65px;
+  padding: 15px;
+  border: 3px solid #5CDB95;
+  border-radius: 15px;
+  background-color: #05386B;
+  color: #5CDB95;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: Alfa Slab One;
+  transition: transform 0.5s, background-color 0.5s, color 0.5s;
+  cursor: pointer;
+  animation-name: buttonJumps;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-iteration-count: 2;
+}
+
+@keyframes buttonJumps {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50%
+  {
+      transform: translateY(-10px);
+  }
+}
+.create-account-now:hover
+{
+border: 3px solid #05386B;
+border-radius: 15px;
+  transform: translateY(-10px);
+  background-color: #5CDB95;
+  color: #05386B;
+}
+
+.right-text {
+
+  
+  color: #05386B;
+  font-family: Alfa Slab One;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+
+.hero2 {
+  width: 100%;
+  height: 738px;
+  border: 1px solid red; /* to remove the horizontal scroll bar remove this*/
+  position: relative;
+  /* Adjust the transform property to center the hero vertically */
+  top: 40%;
+  transform: translateY(calc(-50% + 54px)); /* Half of navbar height */
+  margin-bottom: 10px;
+
+
+      /*Child*/
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left-image2 {
+  background: url(/images/heropic.png);
+  width: 50%;
+  height: 600px; /* Adjust the height as needed */
+  background-size: contain; /* Use 'contain' to fit the image within the container */
+  background-position: center center; /* Center the image horizontally and vertically */
+  background-repeat: no-repeat;
+
+}
+
+
+.right-text2 {
+
+
+  color: #05386B;
+  font-family: Alfa Slab One;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+
+.hero3 {
+  width: 100%;
+  height: 738px;
+  border: 1px solid red; /* to remove the horizontal scroll bar remove this*/
+  position: relative;
+  /* Adjust the transform property to center the hero vertically */
+  top: 40%;
+  transform: translateY(calc(-50% + 54px)); /* Half of navbar height */
+  margin-bottom: 10px;
+}
+
+
+
+.navbar ul li
+{
+  list-style: none;
+  display: inline-block;
+  margin: 0 30px;
+  position: relative;
+
+}
+/* Replace '/fonts/' with the appropriate path to your font files */
+@font-face {
+  font-family: 'Alfa Slab One';
+  src:  url('/fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Alfa Slab One';
+  src:  url('/fonts/HoltwoodOneSC.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.navbar ul li a
+{
+  text-decoration: none;
+  color: #05386B;
+  color: #05386B;
+  font-family: Alfa Slab One;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+}
+.logo
+{
+  width: 145px;
+  height: 68px;
+  background-image: url('/images/logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.icon {
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #05386B; /* Background color */
+
+  /* Background image */
+  background-image: url('/images/user.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

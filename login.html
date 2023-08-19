@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="styled-div">
+        
+        <div class="leftPanel">
+            <p class="textCreate">Log in to your account</p>
+
+           
+            <div class="fields">
+                <label class="minitext" for="fname">Email</label><br>
+                <input type="text" class="text-field" id="email" placeholder="Email">
+            </div>
+                
+            
+            <div class="fields">
+                <label class="minitext" for="fname">Password</label><br>
+                <input type="password" class="text-field" id="password" placeholder="Password">
+            </div>
+            <p id="error-message" style="color: red; display: none;"></p>
+            <button type="button" class="submit-button" id="login">LOGIN</button>  
+            <div class="login-text">
+                Don't have an account? <a href="register.html">Register</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="login.js"></script>
+</body>
+</html>

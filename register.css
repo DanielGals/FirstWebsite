@@ -1,0 +1,152 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(145deg, #ff9482 0%, #7D77FF 100%);
+    backdrop-filter: blur(2px);
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    
+}
+
+
+.styled-div {
+    width: 1056px;
+    height: 900px;
+    flex-shrink: 0;
+    border-radius: 25px;
+    background: url(stock.jpg), lightgray 50% / cover no-repeat;
+    background-size: 100% 100%; /* or background-size: 100% auto; */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(1.5px);
+    position: relative;
+    opacity: 0; /* Start the text as invisible */
+    animation: moveUpAndFadeIn 2s forwards;
+}
+
+@keyframes moveUpAndFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px); /* Travel from down to up by 10px */
+    }
+
+    100% {
+      opacity: 1; /* Fully visible */
+    }
+  }
+
+.leftPanel
+{
+    width: 528px;
+    height: 900px;
+    flex-shrink: 0;
+    border-radius: 25px 0px 0px 25px;
+    background: #FCFEFF;
+    display: flex; /* Added to use flexbox for centering */
+    justify-content: center; /* Added to center content horizontally */
+    align-items: center; /* Added to center content vertically */
+    flex-direction: column; /* Added to align children vertically */
+    
+    
+}
+.text-field {
+    width: 300px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: rgba(176, 186, 195, 0.40);
+    border: none; /* Optional: Removes the default border */
+    padding: 10px; /* Optional: Adds some padding inside the text field */
+    font-size: 16px; /* Optional: Adjust font size as needed */
+    color: #000000; /* Optional: Sets text color to white */
+    
+}
+.fields
+{
+    margin-left: 45px;
+    margin-bottom: 20px; /* Adds spacing between the text fields */
+}
+.minitext
+{
+    margin-left: 10px;
+    color: #7C838A;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.submit-button {
+    margin-top: 10px;
+    width: 200px;
+    height: 65px;
+    padding: 15px;
+    border: 3px solid #ff9482;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    color: #ff9482;
+    font-size: 20px;
+    font-weight: 500;
+    transition: transform 0.5s, background-color 0.5s, color 0.5s;
+    cursor: pointer;
+    animation-name: buttonJumps;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-iteration-count: 2;
+}
+
+@keyframes buttonJumps {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50%
+    {
+        transform: translateY(-10px);
+    }
+  }
+.submit-button:hover
+{
+    transform: translateY(-10px);
+    background-color: #ff9482;
+    color: rgb(255, 238, 255);
+}
+.textCreate
+{
+    margin-bottom: 50px;
+    color: #000;
+    font-family: Poppins;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.login-text
+{
+    margin-top: 15px;
+    color: #7C838A;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.input-icon {
+    margin-left: 20px;
+    position: relative;
+    background-image: url('iconcheck.png'); /* Replace 'iconcheck.png' with the actual filename of your icon */
+    background-size: cover;
+    background-position: right center; /* Adjust the position as needed */
+    padding-right: 25px; /* Add padding to make room for the icon */
+    visibility: hidden;
+  }
