@@ -104,8 +104,10 @@ function checkConfirm() {
         const passwordInput = document.getElementById("password").value;
         
         
+        console.log('TAEKA BAGO CREATE USER');
+          createUser(usernameInput, passwordInput, fnameInput, emailInput, phoneInput, addressInput);
+         
 
-        createUser(usernameInput, passwordInput, fnameInput, emailInput, phoneInput, addressInput);
         
     } 
     else{
@@ -113,6 +115,43 @@ function checkConfirm() {
     }
   }
 
+  async function createBankAccount(userId) {
+    const user = {
+      user_id: userId
+    };
+    console.log('within the code');
+    try {
+      console.log('Before response');
+      const response = await fetch('http://localhost:8080/create-bank-account', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({userId})
+      });
+  
+      if (!response.ok) {
+        console.log('Network response was not ok');
+        throw new Error('Network response was not ok');
+        
+      }
+       
+      console.log('BANK CREATED');
+      window.location.href = '/dashboard.html';
+      const responseData = await response.json();
+      
+      return responseData;
+    } catch (error) {
+      console.error('Error creating bank account:', error);
+      throw error;
+    }
+  }
+  
+
+
+
+
+  
   async function createUser(username, password, full_name, email, phone, address) {
     const userData = {
       username: username,
@@ -142,9 +181,13 @@ function checkConfirm() {
       
       //Store in local storage
       localStorage.setItem('ACCESS_TOKEN', accessToken);
+      console.log('TAEKA GET USER ID OPENING.... ' + username);
 
 
-      window.location.href = '/dashboard.html';
+      // Call getUserID function here
+      await getUserID(username); 
+
+      //
   
       
     } catch (error) {
@@ -152,3 +195,36 @@ function checkConfirm() {
       throw error; // Re-throw the error to be caught by the caller.
     }
   }
+
+  // ! ERROR DITO DI NAANDAR
+  async function getUserID(username) {
+    console.log('getUserID opened');
+    try {
+      const response = await fetch(`http://localhost:8080/users/${username}`);
+
+      
+      if (!response.ok) {
+        console.log('network response not ok');
+        throw new Error('Network response was not ok');
+        
+      }
+      
+      const user = await response.json();
+
+      console.log('Retrieved user = ', user);
+      const userId = user.user_id;
+      
+      console.log('Retrieved user ID:', userId);
+      
+      if (userId) {
+        console.log(userId , " is true");
+        await createBankAccount(userId);
+      } else {
+        console.error('User ID not found.');
+      }
+    } catch (error) {
+      console.error('Error fetching user ID:', error);
+      // Handle the error appropriately
+    }
+  }
+  

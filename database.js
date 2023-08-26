@@ -52,8 +52,7 @@ export async function checkCredentials(email, password) {
   }
 }
 
-//const user = await getUsers()
-//console.log(user); 
+
 
 export async function getUser(username)
 {
@@ -65,6 +64,17 @@ export async function getUser(username)
 
    return rows[0]
 }
+
+export async function getBankAccountUser(user_id) {
+  const [rows] = await pool.query(`
+  SELECT * 
+  FROM Accounts
+  WHERE user_id = ?
+  `, [user_id]);
+
+  return rows[0];
+}
+
 
 export async function createUser(username, password, fullName, email, phone, address)
 {
@@ -143,5 +153,82 @@ export async function deleteUser(username) {
       connection.release();
     }
   }
+
+  export async function createBankAccount(userId, accountId) {
+    const connection = await pool.getConnection();
+    try {
+      // Begin a transaction
+      await connection.beginTransaction();
   
- 
+      // Verify user existence
+      const verifyUserQuery = `
+        SELECT user_id FROM Users WHERE user_id = ?;
+      `;
+      const [userRows] = await connection.query(verifyUserQuery, [userId]);
+  
+      if (userRows.length === 0) {
+        throw new Error('User does not exist.');
+      }
+  
+      // Create the bank account
+      const createAccountQuery = `
+        INSERT INTO Accounts (account_id, user_id, balance)
+        VALUES (?, ?, 0);
+      `;
+      await connection.query(createAccountQuery, [accountId, userId]);
+  
+      // Commit the transaction
+      await connection.commit();
+  
+      // Return true to indicate that the bank account was created successfully
+      return true;
+    } catch (error) {
+      // Rollback the transaction in case of an error
+      await connection.rollback();
+      throw error; // Rethrow the error to be handled by the caller
+    } finally {
+      // Release the connection back to the pool
+      connection.release();
+    }
+  }
+  
+
+  export async function GenerateAccountNumber() {
+    const connection = await pool.getConnection();
+    try {
+      // Begin a transaction
+      await connection.beginTransaction();
+  
+      let newAccountNumber;
+      let exists = true;
+  
+      while (exists) {
+        // Generate a new account number
+        newAccountNumber = Math.floor(Math.random() * 900000) + 100000;
+  
+        // Check if the account number exists
+        const checkQuery = `
+          SELECT COUNT(*) AS count
+          FROM Accounts
+          WHERE account_id = ?;
+        `;
+        const [result] = await connection.query(checkQuery, [newAccountNumber]);
+        exists = result[0].count > 0;
+      }
+  
+      // Commit the transaction
+      await connection.commit();
+  
+      // Return the generated account number
+      return newAccountNumber;
+    } catch (error) {
+      // Rollback the transaction in case of an error
+      await connection.rollback();
+      throw error; // Rethrow the error to be handled by the caller
+    } finally {
+      // Release the connection back to the pool
+      connection.release();
+    }
+  }
+  const user = await getUser("TOKENSAMPLE")
+console.log(user);

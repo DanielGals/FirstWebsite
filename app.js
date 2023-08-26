@@ -2,7 +2,7 @@ import express from 'express'
 import jwt from 'jsonwebtoken';
 import cors from 'cors'; //CORS
 
-import {getUsers, getUser, createUser, updatePassword, deleteUser, checkCredentials} from './database.js'
+import {getUsers, getUser, createUser, updatePassword, deleteUser, checkCredentials, GenerateAccountNumber, createBankAccount, getBankAccountUser} from './database.js'
 
 
 const app = express()
@@ -55,6 +55,12 @@ app.get("/users/:username", async (req, res) =>
     res.send(user);
 })
 
+app.get("/accounts/:user_id", async (req, res) => {
+  const user_id = req.params.user_id; // Get the user_id parameter from the URL
+  const user = await getBankAccountUser(user_id); // Call the getUserInfo function to retrieve user information
+  res.send(user); // Send the user information as the response
+});
+
 // * To post,get,patch on thunder client, run the server: npm run devStart
 // * enter the api url + endpoint on thunderclient
 // * DONT FORGET TO CHANGE THE REQUEST: POST / GET / PATCH / DELETE
@@ -89,6 +95,34 @@ app.post("/users", async (req, res) => {
     res.json({ accessToken: accessToken, user: user });
 })
 
+// *Post to Accounts Schema to create bank account number
+app.post('/create-bank-account', async (req, res) => {
+  const {userId} = req.body;
+
+  try {
+    
+    // Call the function to update the user's password
+    const accountID = await GenerateAccountNumber();
+
+    const createAccount = await createBankAccount(userId, accountID) 
+    if (createAccount) 
+    {
+      res.status(200).send({ message: "Creating Account Successfull" });
+    } else 
+    {
+      res.status(404).send({ message: "Not Successfull" });
+    }
+  } 
+  catch (error) {
+    res.status(500).send({ message: "error At something", error: error.message });
+  }
+ 
+
+
+});
+
+
+
 //! Learn how to use database library to not use getUsers function
 
 // TODO: Change endpoint name to /get-user-data
@@ -101,6 +135,15 @@ app.get('/check-token', authenticateToken, async(req, res) => {
   const userPreferences = users.filter(player => player.username === authenticatedUsername); //Verifies if db username == jwt username
   res.json(userPreferences); // ! If jwt username != db username - returns [empty] array
 }); 
+
+
+
+
+
+
+
+
+
 
 // * /login creates a jwt token to return to the client side when they fetch the endpoint
 //TUser is just to add it to an object
