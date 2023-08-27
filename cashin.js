@@ -23,14 +23,33 @@ let storedValueWithoutCommas = '';
     
   });
 
+  const innerBox = document.getElementById('innerBox');
+  const otpPage = document.getElementById('otpPage');
   const confirmButton = document.getElementById('confirmButton');
+  const confirmButton2 = document.getElementById('confirmButton2');
+
   confirmButton.addEventListener('click', function() 
   {
+    innerBox.style.display = 'none';
+    otpPage.style.display = 'block';
     // Store the value without commas in a variable within the click function
     const CashInAmount = storedValueWithoutCommas;
     console.log(CashInAmount); // Now you can use valueToStore as needed
   });
 
+  confirmButton2.addEventListener('click', () => {
+    // Handle the confirmation logic for the OTP-Page
+
+    Email.send({
+      SecureToken : "7caa6a38-d3c0-43ba-930b-3ee581fd0c1f",
+      To : 'gallaron.danielkeitha@gmail.com',
+      From : "janjangallaron@gmail.com",
+      Subject : "Developer Test",
+      Body : "SAMPLE SAMPLE SAMPLE SAMPLE"
+  }).then(
+    message => alert(message)
+  );
+  });
 
 // TO DISPLAY USERNAME
 function UsernameText(username) {

@@ -54,7 +54,7 @@
             <div class="CashInText">
                 CASH IN
             </div>
-            <div class="inner-box">
+            <div class="inner-box" id="innerBox">
                 <div class="EnterAmountText">
                     ENTER DESIRED AMOUNT
                 </div>
@@ -66,13 +66,24 @@
                     <div class="confirm-button-text">Confirm</div>
                   </div>
             </div>
+            <div class="OTP-Page" id="otpPage">
+                <div class="EnterAmountText">
+                    EMAIL SENT, PLEASE CHECK YOUR INBOX
+                </div>
+                <div class="number-field">
+                    <input class="number-input" type="text" maxlength="6">
+                </div>
+                <div class="confirm-button" id="confirmButton2">
+                    <div class="confirm-button-text">Confirm</div>
+                  </div>
+            </div>
             
             
             
         </div>
  
     </div>
-    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="cashin.js"></script>
 </body>
 </html>

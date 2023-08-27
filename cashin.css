@@ -210,3 +210,7 @@ body::-webkit-scrollbar-thumb
     line-height: normal;
     text-transform: uppercase;
   }
+
+  .OTP-Page {
+    display: none;
+  }
