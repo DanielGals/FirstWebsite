@@ -39,16 +39,18 @@ let storedValueWithoutCommas = '';
 
   confirmButton2.addEventListener('click', () => {
     // Handle the confirmation logic for the OTP-Page
-
     Email.send({
-      SecureToken : "7caa6a38-d3c0-43ba-930b-3ee581fd0c1f",
+      Host : "smtp.elasticemail.com",
+      Username : "janjangallaron@gmail.com",
+      Password : "BD8983ABD54BF68F269E456794BB241BBBF9",
       To : 'gallaron.danielkeitha@gmail.com',
       From : "janjangallaron@gmail.com",
-      Subject : "Developer Test",
-      Body : "SAMPLE SAMPLE SAMPLE SAMPLE"
+      Subject : "This is the subject",
+      Body : "And this is the body"
   }).then(
     message => alert(message)
   );
+    
   });
 
 // TO DISPLAY USERNAME
