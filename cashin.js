@@ -97,7 +97,7 @@ async function checkAccount() {
     console.log(localStorage);
     try {
       // const accessToken = tokenHandler.getToken();
-      const response = await fetch('http://localhost:8080/check-token', {
+      const response = await fetch('https://alien-zenbank.vercel.app/check-token', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`, // The password to access the API
@@ -122,7 +122,7 @@ async function checkEmail() {
   console.log(localStorage);
   try {
     // const accessToken = tokenHandler.getToken();
-    const response = await fetch('http://localhost:8080/check-token', {
+    const response = await fetch('https://alien-zenbank.vercel.app/check-token', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${accessToken}`, // The password to access the API
