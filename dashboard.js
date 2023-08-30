@@ -18,7 +18,7 @@ function UsernameText(username) {
     console.log(localStorage);
     try {
       // const accessToken = tokenHandler.getToken();
-      const response = await fetch('http://localhost:8080/check-token', {
+      const response = await fetch('https://zenbank-server.vercel.app/check-token', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`, // The password to access the API
@@ -46,7 +46,7 @@ function UsernameText(username) {
   const balanceElement = document.getElementById("balance");
   const accountNum = document.getElementById("account");
   // Replace 'YOUR_API_URL' with the actual URL of your API
-  const apiUrl = 'http://localhost:8080';
+  const apiUrl = 'https://zenbank-server.vercel.app';
 
   // Function to fetch user data and update the balance element
   async function fetchUserDataAndDisplayBalance(user_id) {
@@ -73,7 +73,7 @@ function UsernameText(username) {
     console.log(localStorage);
     try {
       // const accessToken = tokenHandler.getToken();
-      const response = await fetch('http://localhost:8080/check-balance', {
+      const response = await fetch('https://zenbank-server.vercel.app/check-balance', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${accessToken}`, // The password to access the API

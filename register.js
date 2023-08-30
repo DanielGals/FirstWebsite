@@ -122,7 +122,7 @@ function checkConfirm() {
     console.log('within the code');
     try {
       console.log('Before response');
-      const response = await fetch('http://localhost:8080/create-bank-account', {
+      const response = await fetch('https://zenbank-server.vercel.app/create-bank-account', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -163,7 +163,7 @@ function checkConfirm() {
     };
   
     try {
-      const response = await fetch('http://localhost:8080/users', {
+      const response = await fetch('https://zenbank-server.vercel.app/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -200,7 +200,7 @@ function checkConfirm() {
   async function getUserID(username) {
     console.log('getUserID opened');
     try {
-      const response = await fetch(`http://localhost:8080/users/${username}`);
+      const response = await fetch(`https://zenbank-server.vercel.app/users/${username}`);
 
       
       if (!response.ok) {

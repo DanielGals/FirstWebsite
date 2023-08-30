@@ -13,7 +13,7 @@ async function Authlogin(email, password) {
   console.log(email);
   console.log(password);
     try {
-      const response = await fetch('http://localhost:8080/login', {
+      const response = await fetch('https://zenbank-server.vercel.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

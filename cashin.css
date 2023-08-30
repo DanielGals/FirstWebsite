@@ -108,6 +108,7 @@ body::-webkit-scrollbar-thumb
     background: #05386B;
     border-radius: 50px;
     margin: 50px;
+    
 
 }
 .inner-box {
@@ -211,8 +212,20 @@ body::-webkit-scrollbar-thumb
     text-transform: uppercase;
   }
 
+  .hidden {
+    display: none;
+}
+
   .OTP-Page {
     display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+    height: 600px;
+    background: #5CDB95;
+    border-radius: 50px;
+    margin: 50px;
     
   }
   
