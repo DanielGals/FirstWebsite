@@ -170,6 +170,18 @@ body::-webkit-scrollbar-thumb
     outline: none;
     padding: 0;
   }
+  .otp-input {
+    
+    width: calc(70% - 60px); /* Adjusted width to accommodate the PHP symbol */
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 60px; /* Increased font size */
+    color: #EDF5E1; /* Text color */
+    text-align: left;
+    outline: none;
+    padding: 0;
+  }
   .php-symbol {
     width: 60px; /* Width for the PHP symbol */
     height: 100%;
@@ -228,4 +240,23 @@ body::-webkit-scrollbar-thumb
     margin: 50px;
     
   }
+  /* styles.css */
+  .error-message {
+    color: red;
+    display: none;
+    margin: 50px;
+  }
+
   
+  .success-page {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+    height: 600px;
+    background: #5CDB95;
+    border-radius: 50px;
+    margin: 50px;
+
+}
