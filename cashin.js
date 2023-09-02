@@ -101,7 +101,7 @@ let storedValueWithoutCommas = '';
   
   async function insertBalanceOnFrontend(accountId, amountToAdd) {
     try {
-      const response = await fetch('http://localhost:8080/insert-balance', {
+      const response = await fetch('https://zenbank-server.vercel.app/insert-balance', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
