@@ -129,7 +129,7 @@ let storedValueWithoutCommas = '';
 
     async function deductBalance(accountId, amountToAdd) {
       try {
-        const response = await fetch('http://localhost:8080/delete-balance', {
+        const response = await fetch('https://zenbank-server.vercel.app/delete-balance', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ let storedValueWithoutCommas = '';
 
     //! Create new API that takes transID to get user_id on (Accounts) db
 
-    const apiUrl = 'http://localhost:8080';
+    const apiUrl = 'https://zenbank-server.vercel.app';
     async function getUserID(transID) {
       try {
         
@@ -178,7 +178,7 @@ let storedValueWithoutCommas = '';
       }
   }
 
-  const apiUrl2 = 'http://localhost:8080';
+  const apiUrl2 = 'https://zenbank-server.vercel.app';
   async function getTransID(user_id) {
     try {
         const response = await fetch(`${apiUrl2}/name/${user_id}`);
