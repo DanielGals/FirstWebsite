@@ -92,6 +92,3 @@ function UsernameText(username) {
       // Handle errors
     }
   }
-  
-
-

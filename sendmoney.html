@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cashin.css">
+    <link rel="stylesheet" href="sendmoney.css">
     <title>Document</title>
 </head>
 <body>
@@ -52,9 +52,10 @@
     <div class="main">
         <div class="main-dashboard">
             <div class="CashInText">
-                CASH IN
+                SEND MONEY
             </div>
             <div class="inner-box" id="innerBox">
+
                 <div class="EnterAmountText">
                     ENTER DESIRED AMOUNT
                 </div>
@@ -62,22 +63,40 @@
                     <input class="number-input" type="text" maxlength="6">
                     <div class="php-symbol">PHP</div>
                 </div>
-                <div class="confirm-button" id="confirmButton">
-                    <div class="confirm-button-text">Confirm</div>
-                  </div>
-            </div>
-            <div class="OTP-Page" id="otpPage">
+                <!-- Receipients ID -->
                 <div class="EnterAmountText">
-                    EMAIL SENT, PLEASE CHECK YOUR INBOX
+                    ENTER RECEIPIENTS ID
                 </div>
                 <div class="number-field">
-                    <input class="otp-input" type="text" maxlength="6">
+                    <input class="number-input2" type="text" id="recipientIdInput">
+                    
                 </div>
-                <p id="error-message" class="error-message">This is an error message.</p>
+
+
+                <div class="confirm-button" id="confirmButton">
+                    <div class="confirm-button-text">PROCEED</div>
+                  </div>
+            </div>
+            <div class="OTP-Page" id="confirm-page">
+                <div class="EnterAmountText">
+                    Confirmation
+                </div>
+                <div class="EnterAmountText" id="displayName">
+                    Receipents Name:
+                </div>
+                <div class="EnterAmountText" id="displayID">
+                    Receipents ID: 
+                </div>
+                <div class="EnterAmountText" id="displayAmount">
+                    AMOUNT:
+                </div>
+                
+                
                 <div class="confirm-button" id="confirmButton2">
                     <div class="confirm-button-text">Confirm</div>
                 </div>
             </div>
+
             <div class="success-page" id="success-page">
                 <div class="EnterAmountText">
                     SUCCESS
@@ -97,7 +116,6 @@
         </div>
  
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="cashin.js"></script>
+    <script src="sendmoney.js"></script>
 </body>
 </html>

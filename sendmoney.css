@@ -1,0 +1,274 @@
+:root{
+    font-size: 16px;
+    font-family: Alfa Slab One;
+    --text-primary: #5CDB95;
+    --background-primary: #05386B;
+}
+
+body {
+    margin: 0;
+    background: #5CDB95; /* Set the background color for the entire body */
+    padding: 0;
+  }
+
+body::-webkit-scrollbar{
+    width: 0.50rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb
+{
+    background: #05386B
+}
+
+@font-face {
+    font-family: 'Alfa Slab One';
+    src:  url('/fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.navbar
+{
+    width: 25rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--background-primary);
+}
+.navbar-nav
+{
+    list-style: none; /* Add this line to remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.nav-item{
+    width: 100%;
+}
+.nav-item:last-child
+{
+    position: absolute;
+    bottom: 0;
+}
+.nav-link
+{
+    justify-content: center; /* Center horizontally */
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition:600ms;
+}
+.nav-item:nth-child(4) .nav-link {
+    text-decoration: underline;
+}
+.nav-link:hover
+{
+    filter: grayscale(0%) opacity(1);
+    background:  #1e1e24;
+    color: var(--text-primary);
+}
+
+.logo
+{   
+  width: 145px;
+  height: 68px;
+  background-image: url('/images/logo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5rem;
+  margin-top: 30px;
+}
+
+.main {
+    margin-left: 25rem ;
+    padding: 1rem;
+    
+    /*Center of Childrens*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  .main-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1400px;
+    height: 800px;
+    background: #05386B;
+    border-radius: 50px;
+    margin: 50px;
+    
+
+}
+.inner-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+    height: 600px;
+    background: #5CDB95;
+    border-radius: 50px;
+    margin: 10px;
+
+}
+
+.CashInText
+{
+    color: #5CDB95;
+    font-family: Alfa Slab One;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+}
+.EnterAmountText
+{
+    
+    color: #05386B;
+    font-family: Alfa Slab One;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.number-field {
+    
+    width: 394px;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #05386B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .number-input {
+    
+    width: calc(70% - 60px); /* Adjusted width to accommodate the PHP symbol */
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 60px; /* Increased font size */
+    color: #EDF5E1; /* Text color */
+    text-align: left;
+    outline: none;
+    padding: 0;
+  }
+  .number-input2 {
+    
+    width: 80%; /* Adjusted width to accommodate the PHP symbol */
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 60px; /* Increased font size */
+    color: #EDF5E1; /* Text color */
+    text-align: left;
+    outline: none;
+    padding: 0;
+  }
+  .otp-input {
+    
+    width: calc(70% - 60px); /* Adjusted width to accommodate the PHP symbol */
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-size: 60px; /* Increased font size */
+    color: #EDF5E1; /* Text color */
+    text-align: left;
+    outline: none;
+    padding: 0;
+  }
+  .php-symbol {
+    width: 60px; /* Width for the PHP symbol */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 24px;
+    color: #EDF5E1;
+  }
+
+  /* Hide the number input spinner */
+  .number-input::-webkit-inner-spin-button,
+  .number-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+
+  .confirm-button {
+    margin: 50px;
+    width: 258px;
+    height: 85px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #05386B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .confirm-button-text {
+    color: #5CDB95;
+    font-family: "Alfa Slab One", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .hidden {
+    display: none;
+}
+
+  .OTP-Page {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+    height: 600px;
+    background: #5CDB95;
+    border-radius: 50px;
+    margin: 50px;
+    
+  }
+  /* styles.css */
+  .error-message {
+    color: red;
+    display: none;
+    margin: 50px;
+  }
+
+  
+  .success-page {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1250px;
+    height: 600px;
+    background: #5CDB95;
+    border-radius: 50px;
+    margin: 50px;
+
+}
